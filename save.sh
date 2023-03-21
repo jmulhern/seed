@@ -8,4 +8,4 @@ git commit -m "${version} - ${message}"
 if [ "${version}" != "skip" ]; then
   git tag "v${version}"
 fi
-git push --tags
+git push origin main --tags
