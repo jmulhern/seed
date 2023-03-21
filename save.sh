@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
-message=${1:-"nothing"}
-version=${2:-"skip"}
+version=${1}
+if [ "${version}" == "" ]; then
+  echo "no version"
+  exit 1
+fi
+
+message=${2:-"nothing important"}
 
 git add .
 git commit -m "${version} - ${message}"
-if [ "${version}" != "skip" ]; then
-  git tag "v${version}"
-fi
+git tag "v${version}"
 git push origin main --tags
