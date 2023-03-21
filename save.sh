@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
+
 version=${1}
 if [ "${version}" == "" ]; then
-  echo "no version"
+  git describe --abbrev=0 --tags
   exit 1
 fi
 
