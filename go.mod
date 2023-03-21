@@ -1,3 +1,3 @@
-module github.com/jmulhern/seed
+module github.com/jmulhern/heritage
 
 go 1.20
