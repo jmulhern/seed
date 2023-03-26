@@ -13,6 +13,7 @@ type ContentSecurityPolicy struct {
 	Style         []string `json:"style_src,omitempty" yaml:"style-src,omitempty"`
 	Image         []string `json:"image_src,omitempty" yaml:"image-src,omitempty"`
 	Object        []string `json:"object_src,omitempty" yaml:"object-src,omitempty"`
+	Frame         []string `json:"frame_src,omitempty" yaml:"frame-src,omitempty"`
 	BaseURI       []string `json:"base_uri,omitempty" yaml:"base-uri,omitempty"`
 	ReportURI     string   `json:"report_uri,omitempty" yaml:"report-uri,omitempty"`
 }
@@ -55,6 +56,12 @@ func (csp ContentSecurityPolicy) Make(nonce string) string {
 	if len(csp.Object) > 0 {
 		sb.WriteString("object-src ")
 		policyParams := strings.Join(csp.Object, " ")
+		sb.WriteString(policyParams)
+		sb.WriteString(" ; ")
+	}
+	if len(csp.Frame) > 0 {
+		sb.WriteString("frame-src ")
+		policyParams := strings.Join(csp.Frame, " ")
 		sb.WriteString(policyParams)
 		sb.WriteString(" ; ")
 	}
