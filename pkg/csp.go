@@ -7,6 +7,7 @@ import (
 
 type ContentSecurityPolicy struct {
 	Enabled       bool     `json:"enabled,omitempty" yaml:"enabled,omitempty"`
+	ReportOnly    bool     `json:"report_only,omitempty" yaml:"report-only,omitempty"`
 	Default       []string `json:"default_src,omitempty" yaml:"default-src,omitempty"`
 	Script        []string `json:"script_src,omitempty" yaml:"script-src,omitempty"`
 	ScriptElement []string `json:"script_src_elem,omitempty" yaml:"script-src-elem,omitempty"`
