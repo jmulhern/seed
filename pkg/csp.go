@@ -1,7 +1,6 @@
 package pkg
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -25,49 +24,49 @@ func (csp ContentSecurityPolicy) Make(nonce string) string {
 	var sb strings.Builder
 	if len(csp.Default) > 0 {
 		sb.WriteString("default-src ")
-		policyParams := params(csp.Default)
+		policyParams := strings.Join(csp.Default, " ")
 		sb.WriteString(policyParams)
 		sb.WriteString(" ; ")
 	}
 	if len(csp.Script) > 0 {
 		sb.WriteString("script-src ")
-		policyParams := strings.ReplaceAll(params(csp.Script), "<nonce>", nonce)
+		policyParams := strings.ReplaceAll(strings.Join(csp.Script, " "), "<nonce>", nonce)
 		sb.WriteString(policyParams)
 		sb.WriteString(" ; ")
 	}
 	if len(csp.ScriptElement) > 0 {
 		sb.WriteString("script-src-elem ")
-		policyParams := strings.ReplaceAll(params(csp.ScriptElement), "<nonce>", nonce)
+		policyParams := strings.ReplaceAll(strings.Join(csp.ScriptElement, " "), "<nonce>", nonce)
 		sb.WriteString(policyParams)
 		sb.WriteString(" ; ")
 	}
 	if len(csp.Style) > 0 {
 		sb.WriteString("style-src ")
-		policyParams := params(csp.Style)
+		policyParams := strings.Join(csp.Style, " ")
 		sb.WriteString(policyParams)
 		sb.WriteString(" ; ")
 	}
 	if len(csp.Image) > 0 {
 		sb.WriteString("img-src ")
-		policyParams := params(csp.Image)
+		policyParams := strings.Join(csp.Image, " ")
 		sb.WriteString(policyParams)
 		sb.WriteString(" ; ")
 	}
 	if len(csp.Object) > 0 {
 		sb.WriteString("object-src ")
-		policyParams := params(csp.Object)
+		policyParams := strings.Join(csp.Object, " ")
 		sb.WriteString(policyParams)
 		sb.WriteString(" ; ")
 	}
 	if len(csp.BaseURI) > 0 {
 		sb.WriteString("base-uri ")
-		policyParams := params(csp.BaseURI)
+		policyParams := strings.Join(csp.BaseURI, " ")
 		sb.WriteString(policyParams)
 		sb.WriteString(" ; ")
 	}
 	if len(csp.BaseURI) > 0 {
 		sb.WriteString("base-uri ")
-		policyParams := params(csp.BaseURI)
+		policyParams := strings.Join(csp.BaseURI, " ")
 		sb.WriteString(policyParams)
 		sb.WriteString(" ; ")
 	}
@@ -77,13 +76,4 @@ func (csp ContentSecurityPolicy) Make(nonce string) string {
 		sb.WriteString(" ; ")
 	}
 	return sb.String()
-}
-
-func params(values []string) string {
-	for i, v := range values {
-		if !strings.HasPrefix(v, "'") {
-			values[i] = fmt.Sprintf("'%s'", v)
-		}
-	}
-	return strings.Join(values, " ")
 }
