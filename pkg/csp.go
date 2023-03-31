@@ -11,7 +11,7 @@ type ContentSecurityPolicy struct {
 	Script        []string `json:"script_src,omitempty" yaml:"script-src,omitempty"`
 	ScriptElement []string `json:"script_src_elem,omitempty" yaml:"script-src-elem,omitempty"`
 	Style         []string `json:"style_src,omitempty" yaml:"style-src,omitempty"`
-	Image         []string `json:"image_src,omitempty" yaml:"image-src,omitempty"`
+	Image         []string `json:"img_src,omitempty" yaml:"img-src,omitempty"`
 	Object        []string `json:"object_src,omitempty" yaml:"object-src,omitempty"`
 	Frame         []string `json:"frame_src,omitempty" yaml:"frame-src,omitempty"`
 	BaseURI       []string `json:"base_uri,omitempty" yaml:"base-uri,omitempty"`
