@@ -1,4 +1,4 @@
-package pkg
+package heritage
 
 type Packet struct {
 	Name        string `json:"name,omitempty" yaml:"name,omitempty"`

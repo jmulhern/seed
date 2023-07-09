@@ -1,4 +1,4 @@
-package pkg
+package heritage
 
 import (
 	"strings"

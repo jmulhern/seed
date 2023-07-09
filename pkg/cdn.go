@@ -1,4 +1,4 @@
-package pkg
+package heritage
 
 type CDN struct {
 	FQDN   string `json:"fqdn,omitempty" yaml:"fqdn,omitempty"`

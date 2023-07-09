@@ -1,4 +1,4 @@
-package pkg
+package heritage
 
 type Email struct {
 	From string   `json:"from,omitempty" yaml:"from,omitempty"`

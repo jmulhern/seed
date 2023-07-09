@@ -1,4 +1,4 @@
-package pkg
+package heritage
 
 type Seed struct {
 	Name                  string                `json:"name,omitempty" yaml:"name,omitempty"`

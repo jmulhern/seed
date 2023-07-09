@@ -1,4 +1,4 @@
-package pkg
+package heritage
 
 type SMTP struct {
 	HostedZone string `json:"hosted_zone,omitempty" yaml:"hosted-zone,omitempty"`

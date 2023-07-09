@@ -1,4 +1,4 @@
-package pkg
+package heritage
 
 type Site struct {
 	Title       string `json:"title,omitempty" yaml:"title,omitempty"`
