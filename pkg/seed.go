@@ -7,6 +7,7 @@ type Seed struct {
 	ContentSecurityPolicy ContentSecurityPolicy `json:"content_security_policy,omitempty" yaml:"content-security-policy,omitempty"`
 	Bucket                Bucket                `json:"bucket,omitempty" yaml:"bucket,omitempty"`
 	CDN                   CDN                   `json:"cdn,omitempty" yaml:"cdn,omitempty"`
+	Cookie                Cookie                `json:"cookie,omitempty" yaml:"cookie,omitempty"`
 	SMTP                  SMTP                  `json:"smtp,omitempty" yaml:"smtp,omitempty"`
 	Email                 Email                 `json:"email,omitempty" yaml:"email,omitempty"`
 	Login                 Login                 `json:"login,omitempty" yaml:"login,omitempty"`
