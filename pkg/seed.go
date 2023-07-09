@@ -9,5 +9,6 @@ type Seed struct {
 	CDN                   CDN                   `json:"cdn,omitempty" yaml:"cdn,omitempty"`
 	SMTP                  SMTP                  `json:"smtp,omitempty" yaml:"smtp,omitempty"`
 	Email                 Email                 `json:"email,omitempty" yaml:"email,omitempty"`
+	Login                 Login                 `json:"login,omitempty" yaml:"login,omitempty"`
 	Site                  Site                  `json:"site,omitempty" yaml:"site,omitempty"`
 }
