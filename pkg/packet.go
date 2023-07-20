@@ -8,4 +8,5 @@ type Packet struct {
 	Region      string `json:"region,omitempty" yaml:"region,omitempty"`
 	KeySecretID string `json:"key_secret_id,omitempty" yaml:"key-secret-id,omitempty"`
 	Seeds       []Seed `json:"seeds,omitempty" yaml:"seeds,omitempty"`
+	Stripe      Stripe `json:"stripe" yaml:"stripe"`
 }
