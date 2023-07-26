@@ -1,6 +1,7 @@
 package heritage
 
 type Site struct {
+	ID          string `json:"id" yaml:"id"`
 	Title       string `json:"title,omitempty" yaml:"title,omitempty"`
 	Description string `json:"description,omitempty" yaml:"description,omitempty"`
 	Favicon     string `json:"favicon,omitempty" yaml:"favicon,omitempty"`
